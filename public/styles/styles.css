@@ -1,0 +1,46 @@
+* {
+    /* background-color: red; */
+}
+
+body {
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.error-msg {
+    display: none;
+}
+
+#contact-info, #meet-info, #other-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+input[type="text"], 
+input[type="email"],
+select,
+label {
+    width: 100%;
+}
+
+#message {
+    resize: none;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+}
+
+#format-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#format-options > label,
+#format-options > label > input[type="radio"] {
+    width: 33%;
+}

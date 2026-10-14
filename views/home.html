@@ -3,9 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles -->
+     <link rel="stylesheet" href="/styles/styles.css">
     <title>Contact Form</title>
 </head>
 <body>
+    <main>
+        <form action="#" method="get" id="contact-form">
+            <fieldset id="contact-info">
+                <!-- First Name field -->
+                <label for="f-name">First Name</label>
+                <input type="text" name="f-name" id="f-name">
+                <span class="error-msg">Please enter your first name.</span>
+
+                <!-- Last name field -->
+                <label for="l-name">Last Name</label>
+                <input type="text" name="" id="l-name">
+                <span class="error-msg">Please enter your last name.</span>
+
+                <!-- Job Title field -->
+                <label for="job-title">Job Title</label>
+                <input type="text" name="job-title" id="job-title">
+                <span class="error-msg">Please enter your job title.</span>
+
+                <!-- Company field -->
+                <label for="company">Company</label>
+                <input type="text" name="company" id="company">
+                
+                <!-- LinkedIn URL field -->
+                <label for="li-url">LinkedIn URL</label>
+                <input type="text" name="li-url" id="li-url">
+                
+                <!-- Email field -->
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email">
+            </fieldset>
+
+            <fieldset id="meet-info">
+                <!-- Select list for possible methods of meeting -->
+                <label for="meet-list">How did we meet?</label>
+                <select name="meet-list" id="meet-list">
+                    <option value="none">Please select</option>
+                    <option value="person">In person</option>
+                    <option value="others">Through an associate</option>
+                    <option value="social-media">Social media</option>
+                </select>
+
+                <!-- Text field of alternative method of meeting -->
+                <label for="meet-other">Other (please specify)</label>
+                <input type="text" name="meet-other" id="meet-other">
+            
+                <span class="error-msg">Please fill in one of the above fields</span>
+            </fieldset>
+
+            <fieldset id="other-field">
+                <!-- Message field-->
+                <label for="message">Message</label>
+                <textarea name="message" rows="5" id="message"></textarea>
+
+                <!-- Mailing list checkbox -->
+                <label for="mail-list">
+                    <input type="checkbox" name="mail-list" id="mail-list">Please add me to your mailing list
+                </label>
+
+                <!-- Format radio buttons -->
+                <div id="format-options">
+                    <label for="format-btn">Choose an email format:</label>
+                    <label for="format-btn">
+                        <input type="radio" name="format" id="html-btn" value="format-html">
+                        HTML
+                    </label>
+                    <label for="format-btn">
+                        <input type="radio" name="format" id="text-btn" value="format-text">
+                        Text
+                    </label>
+                </div>
+                
+            </fieldset>
+
+        </form>
+    </main>
+
+    <!-- Form -->
     
 </body>
 </html>
