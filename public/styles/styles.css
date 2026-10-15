@@ -1,9 +1,19 @@
 * {
     /* background-color: red; */
+    
+}
+
+#header {
+    text-align: center;
 }
 
 body {
     width: 90%;
+    margin: 1rem auto;
+    font-size: 16px;
+}
+
+#contact-form {
     margin: 1rem auto;
 }
 
@@ -11,7 +21,18 @@ body {
     display: none;
 }
 
-#contact-info, #meet-info, #other-field {
+#contact-info, #meet-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.row, .row-box {
+    width: 100%;
+}
+
+#other-field {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,6 +42,10 @@ body {
 input[type="text"], 
 input[type="email"],
 select,
+label {
+    width: 100%;
+}
+
 label {
     width: 100%;
 }
@@ -38,9 +63,62 @@ label {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
-#format-options > label,
+#format-options > label {
+    display: flex;
+}
 #format-options > label > input[type="radio"] {
     width: 33%;
+}
+
+/* #format-options > label:first-of-type {
+    width: 16rem;
+} */
+
+@media screen and (min-width: 600px) {
+
+    form {
+        max-width: 1200px;
+    }
+
+    /* #contact-info {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "f-name f-name-input l-name l-name-input"
+        ""
+        
+        "
+        ;
+    } */
+
+    #contact-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row {
+        display: flex;
+        flex-flow: row nowrap;
+        align-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        /* width: 100%; */
+    }
+
+    .row-box {
+        display: flex;
+        flex-flow: row wrap;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: flex-start;
+    }
 }
