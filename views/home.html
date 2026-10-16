@@ -61,19 +61,23 @@
 
             <fieldset id="meet-info">
                 <!-- Select list for possible methods of meeting -->
-                <label for="meet-list">How did we meet?</label>
-                <select name="meet-list" id="meet-list">
-                    <option value="none">Please select</option>
-                    <option value="person">In person</option>
-                    <option value="others">Through an associate</option>
-                    <option value="social-media">Social media</option>
-                </select>
-
-                <!-- Text field of alternative method of meeting -->
-                <label for="meet-other">Other (please specify)</label>
-                <input type="text" name="meet-other" id="meet-other">
-            
-                <span class="error-msg">Please fill in one of the above fields</span>
+                <div class="row">
+                    <div class="row-box">
+                        <label for="meet-list">How did we meet?</label>
+                        <select name="meet-list" id="meet-list">
+                            <option value="none">Please select</option>
+                            <option value="person">In person</option>
+                            <option value="others">Through an associate</option>
+                            <option value="social-media">Social media</option>
+                        </select>
+                    </div>
+                    <!-- Text field of alternative method of meeting -->
+                    <div class="row-box">
+                        <label for="meet-other">Other (please specify)</label>
+                        <input type="text" name="meet-other" id="meet-other">
+                        <span class="error-msg">Please fill in one of the above fields</span>
+                    </div>
+                </div>
             </fieldset>
 
             <fieldset id="other-field">
@@ -88,7 +92,7 @@
 
                 <!-- Format radio buttons -->
                 <div id="format-options">
-                    <label for="format-btn">Choose an email format:</label>
+                    <label for="format-btn">Choose a format:</label>
                     <label for="format-btn">
                         <input type="radio" name="format" id="html-btn" value="format-html">
                         HTML
