@@ -1,6 +1,5 @@
 * {
-    /* background-color: red; */
-    
+    box-sizing: border-box;
 }
 
 #header {
@@ -13,6 +12,7 @@ body {
     font-size: 16px;
 }
 
+/* Mobile/Default stylings */
 #contact-form {
     margin: 1rem auto;
     display: flex;
@@ -34,19 +34,30 @@ body {
     justify-content: center;
     align-items: flex-start;
     width: 300px;
+    padding: 1rem;
 }
 
+#other-field {
+    width: 326px;
+    padding: 1rem;
+}
+
+/* Label and Input stylings */
+label {
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    text-align: left;
+}
 
 input[type="text"], 
 input[type="email"],
 #meet-other {
     width: 290px
 }
-select {
-    width: 100%;
-}
 
-.row {
+select,
+.row{
     width: 100%;
 }
 
@@ -61,38 +72,12 @@ select {
     margin: 1rem 0 0 0;
 }
 
-#other-field {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* input[type="text"], 
-input[type="email"],
-select {
-    min-width: 280px;
-    max-width: 100%;
-    display: block;
-    margin: 0.25rem 0.5rem;
-} */
-
-label {
-    width: 100%;
-    display: block;
-}
-
 #message {
     resize: none;
     width: 100%;
 }
 
-label {
-    font-weight: bold;
-    text-align: left;
-}
-
-
+/* Other Field - Specific stylings */
 #format-options {
     display: flex;
     flex-direction: row;
@@ -109,31 +94,26 @@ label {
     align-items: center;
     flex-wrap: nowrap;
 }
+
 #format-options > label > input[type="radio"] {
     width: 33%;
 }
 
-/* #format-options > label:first-of-type {
-    width: 16rem;
-} */
+/* Button container stylings */
+#btn-containter {
+    width: 326px;
+    margin: 1rem 0 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
 
+/* Responsive Stylings - Half-width and Tablet screens */
 @media screen and (min-width: 600px) {
 
     #contact-form {
         max-width: 1200px;
     }
-
-    /* #contact-info {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-areas: 
-        "f-name f-name-input l-name l-name-input"
-        ""
-        
-        "
-        ;
-    } */
 
     #contact-info,
     #meet-info,
@@ -145,12 +125,15 @@ label {
         width: 580px;
     }
 
+    
+    #btn-containter {
+        width: 100%;
+    }
+
+    /* Label and Input stylings */
     input[type="text"], 
     input[type="email"] {
         width: 180px;
-    }
-    #meet-other {
-        width: 275px;
     }
 
     select {
@@ -167,7 +150,6 @@ label {
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
-        /* width: 100%; */
     }
 
     .row-box {
@@ -177,6 +159,19 @@ label {
         align-content: center;
         align-items: center;
         justify-content: flex-start;
+    }    
+
+    /* Meeting Info stylings */
+    #meet-other {
+        width: 248px;
     }
 
+    /* Button container stylings */
+    #btn-containter {
+        width: 580px;
+        margin: 1rem 0 0 0;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
 }
