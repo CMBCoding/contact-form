@@ -124,16 +124,30 @@ select,
     width: 33%;
 }
 
+/* #format-options > label:first-of-type {
+    width: 20rem;
+} */
+
+input[type="radio"] {
+    margin: 0;
+}
+
 /* Button container stylings */
 #btn-containter {
     width: 326px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    margin: 0 auto 1rem auto;
 }
 button[type="submit"] {
     background-color: #4caf50;
     border-radius: var(--curb);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px;
+    width: 90px;
 }
 
 /* Responsive Stylings - Half-width and Tablet screens */
@@ -160,16 +174,37 @@ button[type="submit"] {
         align-items: center;
         width: 580px;
     }
+
+    #contact-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 580px;
+    }
+
+    #contact-info > .row > .row-box > input[type="text"],  
+    #contact-info > .row > .row-box > input[type="email"] {
+        width: 165px;
+        margin: 0 0.5rem;
+    }
+
+    #contact-info > .row > .row-box > label,
+    #meet-info > .row > .row-box > label {
+        padding-left: 0.5rem;
+    }
+    
+    #meet-info > .row > .row-box > #meet-other-label,
+    #meet-info > .row > .row-box > #meet-list-label {
+        padding-left: 0;
+    }
+
+    #meet-info > .row > .row-box > #meet-list-label {
+        padding-left: 0.5rem;
+    }
     
     #btn-containter {
         width: 100%;
-    }
-
-
-    /* Label and Input stylings */
-    input[type="text"], 
-    input[type="email"] {
-        width: 180px;
     }
 
     select {
@@ -205,7 +240,7 @@ button[type="submit"] {
     /* Button container stylings */
     #btn-containter {
         width: 580px;
-        margin: 1rem 0 0 0;
+        margin: 0 0 1rem 0;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -214,21 +249,6 @@ button[type="submit"] {
 
 /* Responsive Stylings - Full-screen Desktop */
 @media screen and (min-width: 1200px) {
-
-    #contact-info,
-    #meet-info,
-    #other-field {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 900px;
-    }
-
-    /* #contact-info {
-        margin-top: 0;
-    } */
-
     #main {
         max-width: 945px;
         display: flex;
@@ -242,11 +262,32 @@ button[type="submit"] {
         margin: 1rem;
     }
 
+    #contact-info,
+    #meet-info,
+    #other-field {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 900px;
+    }
 
+    #contact-info > .row > .row-box > input[type="text"], 
+    #contact-info > .row > .row-box > input[type="email"] {
+        width: 260px;
+        margin: 0 0.5rem;
+    }
+
+    #meet-info > .row > .row-box > input, select {
+        width: 100%;
+    }
+
+    /* Button container stylings */
     #btn-containter {
         width: 900px;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
+        margin: 0;
     }
 }
