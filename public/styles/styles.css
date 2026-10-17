@@ -260,8 +260,6 @@ button[type="submit"] {
         align-items: center;
     }
 
-  
-
     /* Meeting Info stylings */
     #meet-other {
         width: 248px;
@@ -278,7 +276,7 @@ button[type="submit"] {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        margin: 0 auto 1rem 1.4rem;
+        margin: 0 auto 1rem 1.5rem;
     }
 
 }
