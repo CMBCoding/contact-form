@@ -17,8 +17,13 @@ body {
     background-color: #f4f4f4;
 }
 
+fieldset {
+    border: none;
+}
+
 :root {
     --curb: 5px; 
+    --field-border: solid 2px rgb(97, 94, 94);
 }
 
 /* Mobile/Default stylings */
@@ -55,13 +60,14 @@ body {
     border-radius: var(--curb);
 }
 
+
 #contact-form {
    margin: 0 auto;
 }
 
-#other-field {
-    width: 326px;
-    padding: 1rem;
+
+#other-field > label:first-of-type {
+    margin-bottom: 0;
 }
 
 /* Label and Input stylings */
@@ -76,12 +82,19 @@ input[type="text"],
 input[type="email"],
 #meet-other {
     width: 290px;
+    height: 2rem;
     border-radius: var(--curb);
+    border: var(--field-border);
 }
 
-select,
-.row{
+select,.row {
     width: 100%;
+}
+
+select {
+    height: 2rem;
+    border: var(--field-border);
+    border-radius: var(--curb);
 }
 
 .row-box {
@@ -97,18 +110,21 @@ select,
 
 #message {
     resize: none;
-    width: 100%;
-    margin: 1rem auto;
+    width: 290px;
+    margin: 0 auto 1rem auto;
 }
 
-/* Other Field - Specific stylings */
+#other-field {
+    align-items: flex-start;
+}
+
 #format-options {
     display: flex;
     flex-direction: row;
+    margin: 1rem 0 0;
+    justify-content: center;
+    align-content: center;
     align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    margin: 1rem auto 0;
 }
 
 #format-options > label {
@@ -124,9 +140,10 @@ select,
     width: 33%;
 }
 
-/* #format-options > label:first-of-type {
-    width: 20rem;
-} */
+textarea {
+    border: var(--field-border);
+    border-radius: var(--curb);
+}
 
 input[type="radio"] {
     margin: 0;
@@ -138,8 +155,9 @@ input[type="radio"] {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 1rem 1.4rem;
 }
+
 button[type="submit"] {
     background-color: #4caf50;
     border-radius: var(--curb);
@@ -160,6 +178,24 @@ button[type="submit"] {
     #header > h1 {
         margin: 0;
     }
+
+    .row {
+        display: flex;
+        flex-flow: row nowrap;
+        align-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .row-box {
+        display: flex;
+        flex-flow: row wrap;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: flex-start;
+    }  
 
     #contact-form {
         max-width: 1200px;
@@ -183,6 +219,10 @@ button[type="submit"] {
         width: 580px;
     }
 
+    #other-field {
+        align-items: flex-start;
+    }
+
     #contact-info > .row > .row-box > input[type="text"],  
     #contact-info > .row > .row-box > input[type="email"] {
         width: 165px;
@@ -202,10 +242,6 @@ button[type="submit"] {
     #meet-info > .row > .row-box > #meet-list-label {
         padding-left: 0.5rem;
     }
-    
-    #btn-containter {
-        width: 100%;
-    }
 
     select {
         min-width: 280px;
@@ -214,27 +250,25 @@ button[type="submit"] {
         margin: 0.25rem 0.5rem;
     }
 
-    .row {
+    #format-options {
         display: flex;
-        flex-flow: row nowrap;
-        align-content: center;
         flex-direction: row;
-        flex-wrap: nowrap;
+        margin: 1rem 0 0;
+        width: 400px;
+        justify-content: center;
+        align-content: center;
         align-items: center;
     }
 
-    .row-box {
-        display: flex;
-        flex-flow: row wrap;
-        flex-direction: row;
-        align-content: center;
-        align-items: center;
-        justify-content: flex-start;
-    }    
+  
 
     /* Meeting Info stylings */
     #meet-other {
         width: 248px;
+    }
+
+    #message {
+        width: 100%;
     }
 
     /* Button container stylings */
@@ -244,7 +278,9 @@ button[type="submit"] {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
+        margin: 0 auto 1rem 1.4rem;
     }
+
 }
 
 /* Responsive Stylings - Full-screen Desktop */
@@ -272,6 +308,10 @@ button[type="submit"] {
         width: 900px;
     }
 
+    #other-field {
+        align-items: flex-start;
+    }
+
     #contact-info > .row > .row-box > input[type="text"], 
     #contact-info > .row > .row-box > input[type="email"] {
         width: 260px;
@@ -288,6 +328,6 @@ button[type="submit"] {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        margin: 0;
+        margin: 0 auto 1rem 1.5rem;
     }
 }
