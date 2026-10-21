@@ -44,12 +44,15 @@ fieldset {
 }
 
 .error-msg {
-    display: none;
+    visibility: hidden;
     text-align: left;
     background-color: #ff0000;
     color: #ffffff;
     font-weight: bold;
-    margin: 0.25rem 1rem 0.5rem 0.75rem;
+    width: 100%;
+    margin: 0.25rem 0;
+    padding: 0.25rem;
+    border-radius: var(--curb);
 }
 
 #contact-info, 
@@ -61,7 +64,7 @@ fieldset {
     align-items: flex-start;
     width: 300px;
     padding: 1rem;
-    margin: 1rem auto;
+    margin: 0 auto;
     border-radius: var(--curb);
 }
 
@@ -96,6 +99,22 @@ select,.row {
     width: 100%;
 }
 
+.error-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    /* display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center; */
+}
+
+.error-row-widescreen {
+    display: none;
+}
+
 select {
     height: 2rem;
     border: var(--field-border);
@@ -104,13 +123,12 @@ select {
 
 .row-box {
     width: 100%;
-    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     align-content: center;
     justify-content: center;
-    margin: 1rem 0 0 0;
+    margin: 0.5rem 0 0 0;
 }
 
 #message {
@@ -194,13 +212,24 @@ button[type="submit"] {
     }
 
     .row-box {
-        display: flex;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.5rem 2.5rem 1fr;
+        /* display: flex;
         flex-flow: row wrap;
         flex-direction: row;
         align-content: center;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: flex-start; */
     }  
+
+    .error-msg {
+        visibility: hidden;
+        align-self: baseline;
+        max-width: 165px;
+        margin: 0.5rem;
+    }
 
     #contact-form {
         max-width: 1200px;
@@ -234,15 +263,21 @@ button[type="submit"] {
         margin: 0 0.5rem;
     }
 
+    .error-row-widescreen {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+    }
+
     #contact-info > .row > .row-box > label,
     #meet-info > .row > .row-box > label {
         padding-left: 0.5rem;
     }
     
-    #meet-info > .row > .row-box > #meet-other-label,
+    /* #meet-info > .row > .row-box > #meet-other-label,
     #meet-info > .row > .row-box > #meet-list-label {
         padding-left: 0;
-    }
+    } */
 
     #meet-info > .row > .row-box > #meet-list-label {
         padding-left: 0.5rem;
@@ -252,7 +287,8 @@ button[type="submit"] {
         min-width: 280px;
         max-width: 100%;
         display: block;
-        margin: 0.25rem 0.5rem;
+        margin-right: 0.5rem;
+        /* margin: 0.25rem 0.5rem; */
     }
 
     #format-options {
@@ -268,6 +304,7 @@ button[type="submit"] {
     /* Meeting Info stylings */
     #meet-other {
         width: 248px;
+        margin-left: 0.5rem;
     }
 
     #message {
@@ -315,6 +352,13 @@ button[type="submit"] {
         align-items: flex-start;
     }
 
+    .error-msg {
+        visibility: hidden;
+        margin: 0.25rem 1rem 0.5rem 0.75rem;
+        max-width: 260px;
+        margin: 0.5rem;
+    }
+
     #contact-info > .row > .row-box > input[type="text"], 
     #contact-info > .row > .row-box > input[type="email"] {
         width: 260px;
@@ -322,7 +366,8 @@ button[type="submit"] {
     }
 
     #meet-info > .row > .row-box > input, select {
-        width: 100%;
+        width: 410px;
+        margin: auto 0.5rem;
     }
 
     /* Button container stylings */

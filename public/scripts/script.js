@@ -20,7 +20,7 @@
     if (fname === "") {
         valid = false; //Invalidate the validation.
         //Display the error message.
-        document.getElementById("error-f-name").style.display = "block";
+        document.getElementById("error-f-name").style.visibility = "visible";
     }
  };
 
