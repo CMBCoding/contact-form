@@ -43,15 +43,18 @@ fieldset {
     align-items: center;
 }
 
+.spacer, .error-msg {
+    visibility: hidden;    
+    width: 100%;
+    margin: 0.25rem 0;
+    padding: 0.25rem;
+}
+
 .error-msg {
-    visibility: hidden;
     text-align: left;
     background-color: #ff0000;
     color: #ffffff;
     font-weight: bold;
-    width: 100%;
-    margin: 0.25rem 0;
-    padding: 0.25rem;
     border-radius: var(--curb);
 }
 
@@ -216,12 +219,6 @@ button[type="submit"] {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1.5rem 2.5rem 1fr;
-        /* display: flex;
-        flex-flow: row wrap;
-        flex-direction: row;
-        align-content: center;
-        align-items: center;
-        justify-content: flex-start; */
     }  
 
     .error-msg {
@@ -229,6 +226,11 @@ button[type="submit"] {
         align-self: baseline;
         max-width: 165px;
         margin: 0.5rem;
+    }
+
+    #meet-info > .error-msg {
+        max-width: 35rem;
+        margin: 0 auto;
     }
 
     #contact-form {
@@ -350,6 +352,11 @@ button[type="submit"] {
 
     #other-field {
         align-items: flex-start;
+    }
+
+    #meet-info > .error-msg {
+        max-width: 260px;
+        margin: 0.5rem;
     }
 
     .error-msg {
