@@ -4,6 +4,10 @@
     //Create a boolean value to check the status of form validation
     let valid = true;
 
+    /*With every press (valid) of the submit button, 
+    call the wipeErrors() */
+    wipeErrors();
+
     //Create a regular expression that tests for emails
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     /* Checks for [any string of characters] + 
@@ -19,6 +23,8 @@
     let email = document.getElementById("email").value.trim();
     //Get the value of meet-list and store it.
     let meetList = document.getElementById("meet-list").value;
+    //Get the value of mail-list and store it.
+    let mailList = document.getElementById("mail-list");
     //Get the value of meet-other, trim and store it.
     let meetOther = document.getElementById("meet-other").value.trim();
 
@@ -45,6 +51,27 @@
         document.getElementById("error-email").style.visibility = "visible";
     }
 
+    //If the user checks mail-list...
+    if ((mailList.checked === true) && (email === "")) {
+        valid = false; //Invalidate the validation.
+        document.getElementById("error-email").style.visibility = "visible";
+    }
+
     return valid;
  };
+
+
+//Function that clears out the error displays
+function wipeErrors() {
+    //Grab all of the error display elements
+    let errorMsgs = document.getElementsByClassName("error-msg");
+
+    //For the length of the errorMsgs nodelist
+    for (let i = 0; i < errorMsgs.length; i++) {
+        /*Get the element at position i in the nodelist, change
+        it's visibility back to "hidden" */
+        errorMsgs[i].style.visibility = "hidden";
+    };
+    
+};
 
