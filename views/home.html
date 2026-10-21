@@ -8,7 +8,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <!-- Script -->
-     <script src="pwd/scripts/script.js"></script>
+     <script src="/scripts/script.js" defer></script>
     <title>Contact Form</title>
 </head>
 <body>
@@ -26,14 +26,14 @@
                     <div class="row-box">
                         <label for="f-name">First Name</label>
                         <input type="text" name="f-name" id="f-name">
-                        <span class="error-msg">Please enter your first name.</span>
+                        <span class="error-msg" id="error-f-name">Please enter your first name.</span>
                     </div>
                     
                     <!-- Last name field -->
                     <div class="row-box">
                         <label for="l-name">Last Name</label>
                         <input type="text" name="l-name" id="l-name">
-                        <span class="error-msg">Please enter your last name.</span>
+                        <span class="error-msg" id="error-l-name">Please enter your last name.</span>
                     </div>
 
                     <!-- Job Title field -->

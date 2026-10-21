@@ -45,6 +45,11 @@ fieldset {
 
 .error-msg {
     display: none;
+    text-align: left;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0.25rem 1rem 0.5rem 0.75rem;
 }
 
 #contact-info, 
