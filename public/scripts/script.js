@@ -16,8 +16,9 @@
 
     const liRegex = /^(https?:\/\/)?(www\.)?linkedin\.com\/in\/.*/;
     /* Checks for [https or not] + [www. or not] + [linkedin.com] +
+     [any string of characters] */
 
-     */
+    let meet = "";
 
     //Create and assign variables for the form elements
     //Get the value of first name, trim and store it.
@@ -28,14 +29,12 @@
     let email = document.getElementById("email").value.trim();
     //Get the value of the LinkedIn link and store it
     let linkedIn = document.getElementById("li-url").value.trim();
-    //Get the value of meet-list and store it.
-    let meetList = document.getElementById("meet-list").value;
+    //Get the value of meet-list, trim and and store it.
+    let meetList = document.getElementById("meet-list").value.trim();
     //Get the value of meet-other, trim and store it.
     let meetOther = document.getElementById("meet-other").value.trim();
     //Get the value of mail-list and store it.
     let mailList = document.getElementById("mail-list");
-
-    /* Validate the first name entry */
 
     // If the first name input has no entry...
     if (fname === "") {
@@ -59,13 +58,20 @@
     }
 
     //If the LinkedIn link is not in the correct format...
-    if (linkedIn != "" && (!linkedIn.test(linkedIn))) {
+    if (linkedIn != "" && (!liRegex.test(linkedIn))) {
         valid = false; //Invalidate the validation.
         document.getElementById("error-li").style.visibility = "visible";
     }
 
     //If the there is nothing selected for "How we met section"...
-    if ((meetList === "" )|| (meetOther === "")) {
+    if ((meetList === "none" ) && (meetOther === "")) {
+        valid = false; //Invalidate the validation.
+        //Display the error message.
+        document.getElementById("error-meet").style.visibility = "visible";
+    };
+
+    //If both 'how we met' fields are selected...
+    if ((meetList !== "none") && (meetOther !== "")) {
         valid = false; //Invalidate the validation.
         //Display the error message.
         document.getElementById("error-meet").style.visibility = "visible";
