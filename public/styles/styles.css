@@ -22,7 +22,7 @@ fieldset {
 }
 
 :root {
-    --curb: 5px; 
+    --curb: 5px;
     --field-border: solid 2px rgb(97, 94, 94);
 }
 
@@ -43,8 +43,9 @@ fieldset {
     align-items: center;
 }
 
-.spacer, .error-msg {
-    visibility: hidden;    
+.spacer,
+.error-msg {
+    visibility: hidden;
     width: 100%;
     margin: 0.25rem 0;
     padding: 0.25rem;
@@ -58,14 +59,14 @@ fieldset {
     border-radius: var(--curb);
 }
 
-#contact-info, 
+#contact-info,
 #meet-info,
 #other-field {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 300px;
+    width: 18.75rem;
     padding: 1rem;
     margin: 0 auto;
     border-radius: var(--curb);
@@ -73,11 +74,11 @@ fieldset {
 
 
 #contact-form {
-   margin: 0 auto;
+    margin: 0 auto;
 }
 
 
-#other-field > label:first-of-type {
+#other-field>label:first-of-type {
     margin-bottom: 0;
 }
 
@@ -89,16 +90,17 @@ label {
     text-align: left;
 }
 
-input[type="text"], 
+input[type="text"],
 input[type="email"],
 #meet-other {
-    width: 290px;
+    width: 18.125rem;
     height: 2rem;
     border-radius: var(--curb);
     border: var(--field-border);
 }
 
-select,.row {
+select,
+.row {
     width: 100%;
 }
 
@@ -136,7 +138,7 @@ select {
 
 #message {
     resize: none;
-    width: 290px;
+    width: 18.125rem;
     margin: 0 auto 1rem auto;
 }
 
@@ -153,7 +155,7 @@ select {
     align-items: center;
 }
 
-#format-options > label {
+#format-options>label {
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -162,7 +164,7 @@ select {
     flex-wrap: nowrap;
 }
 
-#format-options > label > input[type="radio"] {
+#format-options>label>input[type="radio"] {
     width: 33%;
 }
 
@@ -177,7 +179,7 @@ input[type="radio"] {
 
 /* Button container stylings */
 #btn-containter {
-    width: 326px;
+    width: 20.375rem;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -191,17 +193,17 @@ button[type="submit"] {
     color: #fff;
     font-weight: bold;
     padding: 8px;
-    width: 90px;
+    width: 5.625rem;
 }
 
 /* Responsive Stylings - Half-width and Tablet screens */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 37.5rem) {
 
     #header {
         padding-top: 1rem;
     }
 
-    #header > h1 {
+    #header>h1 {
         margin: 0;
     }
 
@@ -211,7 +213,7 @@ button[type="submit"] {
         align-content: center;
         flex-direction: row;
         flex-wrap: nowrap;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .row-box {
@@ -219,22 +221,22 @@ button[type="submit"] {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1.5rem 2.5rem 1fr;
-    }  
+    }
 
     .error-msg {
         visibility: hidden;
         align-self: baseline;
-        max-width: 165px;
+        max-width: 10.313rem;
         margin: 0.5rem;
     }
 
-    #meet-info > .error-msg {
+    #meet-info>.error-msg {
         max-width: 35rem;
         margin: 0 auto;
     }
 
     #contact-form {
-        max-width: 1200px;
+        max-width: 75rem;
     }
 
     #contact-info,
@@ -244,7 +246,7 @@ button[type="submit"] {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 580px;
+        width: 36.25rem;
     }
 
     #contact-info {
@@ -252,16 +254,16 @@ button[type="submit"] {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 580px;
+        width: 36.25rem;
     }
 
     #other-field {
         align-items: flex-start;
     }
 
-    #contact-info > .row > .row-box > input[type="text"],  
-    #contact-info > .row > .row-box > input[type="email"] {
-        width: 165px;
+    #contact-info>.row>.row-box>input[type="text"],
+    #contact-info>.row>.row-box>input[type="email"] {
+        width: 10.313rem;
         margin: 0 0.5rem;
     }
 
@@ -271,22 +273,17 @@ button[type="submit"] {
         width: 100%;
     }
 
-    #contact-info > .row > .row-box > label,
-    #meet-info > .row > .row-box > label {
+    #contact-info>.row>.row-box>label,
+    #meet-info>.row>.row-box>label {
         padding-left: 0.5rem;
     }
-    
-    /* #meet-info > .row > .row-box > #meet-other-label,
-    #meet-info > .row > .row-box > #meet-list-label {
-        padding-left: 0;
-    } */
 
-    #meet-info > .row > .row-box > #meet-list-label {
+    #meet-info>.row>.row-box>#meet-list-label {
         padding-left: 0.5rem;
     }
 
     select {
-        min-width: 280px;
+        min-width: 17.5rem;
         max-width: 100%;
         display: block;
         margin-right: 0.5rem;
@@ -297,7 +294,7 @@ button[type="submit"] {
         display: flex;
         flex-direction: row;
         margin: 1rem 0 0;
-        width: 400px;
+        width: 25rem;
         justify-content: center;
         align-content: center;
         align-items: center;
@@ -305,7 +302,7 @@ button[type="submit"] {
 
     /* Meeting Info stylings */
     #meet-other {
-        width: 248px;
+        width: 15.8rem;
         margin-left: 0.5rem;
     }
 
@@ -315,7 +312,7 @@ button[type="submit"] {
 
     /* Button container stylings */
     #btn-containter {
-        width: 580px;
+        width: 36.25rem;
         margin: 0 0 1rem 0;
         display: flex;
         flex-direction: row;
@@ -326,9 +323,9 @@ button[type="submit"] {
 }
 
 /* Responsive Stylings - Full-screen Desktop */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75rem) {
     #main {
-        max-width: 945px;
+        max-width: 59.063rem;
         display: flex;
         flex-direction: column;
         align-content: center;
@@ -347,39 +344,40 @@ button[type="submit"] {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 900px;
+        width: 56.25rem;
     }
 
     #other-field {
         align-items: flex-start;
     }
 
-    #meet-info > .error-msg {
-        max-width: 260px;
+    #meet-info>.error-msg {
+        max-width: 16.25rem;
         margin: 0.5rem;
     }
 
     .error-msg {
         visibility: hidden;
         margin: 0.25rem 1rem 0.5rem 0.75rem;
-        max-width: 260px;
+        max-width: 16.25rem;
         margin: 0.5rem;
     }
 
-    #contact-info > .row > .row-box > input[type="text"], 
-    #contact-info > .row > .row-box > input[type="email"] {
-        width: 260px;
+    #contact-info>.row>.row-box>input[type="text"],
+    #contact-info>.row>.row-box>input[type="email"] {
+        width: 16.25rem;
         margin: 0 0.5rem;
     }
 
-    #meet-info > .row > .row-box > input, select {
-        width: 410px;
+    #meet-info>.row>.row-box>input,
+    select {
+        width: 25.625rem;
         margin: auto 0.5rem;
     }
 
     /* Button container stylings */
     #btn-containter {
-        width: 900px;
+        width: 56.25rem;
         display: flex;
         flex-direction: row;
         align-items: flex-start;

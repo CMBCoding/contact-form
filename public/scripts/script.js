@@ -14,6 +14,11 @@
     [@] + [any string of characters] + 
     [.] + [any string of characters] */
 
+    const liRegex = /^(https?:\/\/)?(www\.)?linkedin\.com\/in\/.*/;
+    /* Checks for [https or not] + [www. or not] + [linkedin.com] +
+
+     */
+
     //Create and assign variables for the form elements
     //Get the value of first name, trim and store it.
     let fname = document.getElementById("f-name").value.trim(); 
@@ -21,6 +26,8 @@
     let lname = document.getElementById("l-name").value.trim();
     //Get the value of email, trim and store it.
     let email = document.getElementById("email").value.trim();
+    //Get the value of the LinkedIn link and store it
+    let linkedIn = document.getElementById("li-url").value.trim();
     //Get the value of meet-list and store it.
     let meetList = document.getElementById("meet-list").value;
     //Get the value of meet-other, trim and store it.
@@ -49,6 +56,12 @@
         valid = false; //Invalidate the validation.
         //Display the error message.
         document.getElementById("error-email").style.visibility = "visible";
+    }
+
+    //If the LinkedIn link is not in the correct format...
+    if (linkedIn != "" && (!linkedIn.test(linkedIn))) {
+        valid = false; //Invalidate the validation.
+        document.getElementById("error-li").style.visibility = "visible";
     }
 
     //If the there is nothing selected for "How we met section"...
