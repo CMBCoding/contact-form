@@ -14,7 +14,8 @@ body {
     width: 90%;
     margin: 1rem auto;
     font-size: 16px;
-    background-color: #f4f4f4;
+    background-color: var(--midnight-whisper);
+    color: var(--platinum);
 }
 
 fieldset {
@@ -24,14 +25,34 @@ fieldset {
 :root {
     --curb: 5px;
     --field-border: solid 2px rgb(97, 94, 94);
+    --crimson: #990000;
+    --carolina-blue: #95adf4;
+    --midnight-whisper: #262626;
+    --platinum: #eaeaea;
+    --spacer-thin: 0.5rem;
+    --spacer-standard: 1rem;
+    --spacer-extra: 1.5rem;
+    --spacer-plus: 2.5rem;
 }
 
-/* Mobile/Default stylings */
+/* Google Fonts */
+.gothic {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-#main {
-    background-color: #fff;
+.gothic-thin {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Home Stylings */
+#home-main {
     margin: auto;
     border-radius: var(--curb);
+    box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
 }
 
 #contact-form {
@@ -88,6 +109,7 @@ label {
     display: block;
     font-weight: bold;
     text-align: left;
+    border-left: var(--carolina-blue) solid 2px;
 }
 
 input[type="text"],
@@ -108,12 +130,6 @@ select,
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
-    /* display: flex;
-    flex-flow: row nowrap;
-    align-content: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center; */
 }
 
 .error-row-widescreen {
@@ -187,10 +203,10 @@ input[type="radio"] {
 }
 
 button[type="submit"] {
-    background-color: #4caf50;
+    background-color: var(--carolina-blue);
     border-radius: var(--curb);
     border: none;
-    color: #fff;
+    color: var(--platinum);
     font-weight: bold;
     padding: 8px;
     width: 5.625rem;
