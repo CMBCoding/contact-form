@@ -19,8 +19,18 @@ const contacts = [];
 //Define the default route ("/")
 app.get('/', (req, res) => {
     //In response to the request, send the html file at the directory.
-    res.render("home");
+    res.render('home');
 });
+
+//Add a route to the confirmation pare
+app.get('/confirm', (req, res) => {
+    res.render('confirm')
+});
+
+//Add a route to the admin page
+app.get('/admin', (req, res) => {
+    res.render('admin');
+})
 
 // app.post('');
 
