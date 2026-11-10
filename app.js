@@ -13,6 +13,9 @@ app.use(express.static('public'));
 //Add view engine
 app.set('view engine', 'ejs');
 
+//Add middleware for the app
+app.use(express.urlencoded({extended: true}));
+
 //Array to hold contact info
 const contacts = [];
 
@@ -29,10 +32,21 @@ app.get('/confirm', (req, res) => {
 
 //Add a route to the admin page
 app.get('/admin', (req, res) => {
-    res.render('admin');
+    //Post the data from the contacts page into the admin pages
+    res.render('admin', {contacts});
 })
 
-// app.post('');
+//Post the data from the contacts page into the admin pages
+app.post('/confirm', (req, res) => {
+    console.log(req.body);
+
+    //Create a JSON object to store the data from each submission from the contacts posting
+    const contact = req.body;
+    contact['timestamp'] = new Date(); //Affix a timestamp to each contact submission.
+    contacts.push(contact); //Push the contact into the contacts array.
+
+    res.render('confirm', {contact});
+});
 
 //Start a server in the designated port
 app.listen(PORT, () => {
