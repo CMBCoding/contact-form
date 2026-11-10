@@ -13,12 +13,16 @@ app.use(express.static('public'));
 //Add view engine
 app.set('view engine', 'ejs');
 
+//Array to hold contact info
+const contacts = [];
+
 //Define the default route ("/")
 app.get('/', (req, res) => {
     //In response to the request, send the html file at the directory.
-    res.render("home")
-    // res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render("home");
 });
+
+// app.post('');
 
 //Start a server in the designated port
 app.listen(PORT, () => {
