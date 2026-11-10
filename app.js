@@ -10,10 +10,14 @@ const PORT = 3003;
 //Enable static file serving
 app.use(express.static('public'));
 
+//Add view engine
+app.set('view engine', 'ejs');
+
 //Define the default route ("/")
 app.get('/', (req, res) => {
     //In response to the request, send the html file at the directory.
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render("home")
+    // res.sendFile(`${import.meta.dirname}/views/home.html`);
 });
 
 //Start a server in the designated port
