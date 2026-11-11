@@ -49,11 +49,13 @@ fieldset {
 }
 
 /* Nav bar styings */
+
 #nav-bar {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    border-bottom: solid 3px var(--platinum);
 }
 
 .nav-links {
@@ -70,7 +72,7 @@ fieldset {
 }
 
 /* Home Stylings */
-#home-main, #contact-main {
+#home-main, #contact-main, #admin-main {
     margin: auto;
     border-radius: var(--curb);
     box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
@@ -240,8 +242,16 @@ button[type="submit"] {
         padding-top: 1rem;
     }
 
-    #header>h1 {
+    #header > h1 {
         margin: 0;
+    }
+
+    /* Nav bar stylings */
+    #nav-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 
     .row {
@@ -363,6 +373,12 @@ button[type="submit"] {
         align-content: center;
         justify-content: center;
         align-items: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        margin: 1rem;
+        text-align: left;
     }
 
     #contact-form {
