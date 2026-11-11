@@ -2,14 +2,44 @@
 <html lang="en">
 <%- include('partials/head.ejs') %>
 <title>Admin</title>
-<body>
+<body>        
+    <header id="header">
+        <h1 class="gothic">Admin</h1>
+        <%- include('partials/nav.ejs') %>
+    </header>
     <main id="admin-main" class="gothic-thin">
-        <header id="header">
-            <h1>Admin</h1>
-            <%- include('partials/nav.ejs') %>
-        </header>
-        </form>
+        <table id="admin-table">
+            <tbody>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Job Title</th>
+                        <th>Company</th>
+                        <th>LinkedIn URL</th>
+                        <th>Email</th>
+                        <th>Meeting Vector</th>
+                        <th>Message</th>
+                    </tr>
+                    <% contacts.forEach(contact => { %>
+                        <tr>
+                            <td><%= contact.fname %> <%= contact.lname %></td>
+                            <td><%= contact.jobTitle %></td>
+                            <td><%= contact.company %></td>
+                            <td><%= contact.linkedIn %></td>
+                            <td><%= contact.email %></td>
+                            <td><%= contact.meetList %></td>
+                            <td><%= contact.meetOther %></td>
+                            <td><%= contact.message %></td>
+                        </tr>
+                    <% }); %>
+                </thead>
+            </tbody>
+        </table>
     </main>
-    
+    <script>
+        new DataTable('admin-table', 
+            {responsive: true}
+        )
+    </script>
 </body>
 </html>

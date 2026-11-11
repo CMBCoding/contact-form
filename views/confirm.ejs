@@ -3,11 +3,19 @@
 <%- include('partials/head.ejs') %>
 <title>Confirm</title>
 <body>
-    <main id="main">
-        <header id="header">
-            <h1>Confirm</h1>
-        </header>
-        </form>
+    <header id="header">
+        <h1 class="gothic">Confirm</h1>
+        <%- include('partials/nav.ejs') %>
+    </header>
+    <main id="main" class="gothic">
+        <h2>New Contact added</h2>
+        <h3>Contact Summary</h3>
+        <p><strong>Name: </strong><%= contact.fname %> <%= contact.lname %></p>
+        <p><strong>Job Title:</strong> <%= contact.jobTitle %></p>
+        <p><strong>Company:</strong> <%= contact.company %></p>
+        <p><strong>LinkedIn:</strong> <%= contact.linkedIn %></p>
+        <p><strong>Email:</strong> <%= contact.email %> </p>
+        <p><strong>Message:</strong> <%= contact.message %></p>
     </main>
     
 </body>

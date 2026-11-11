@@ -8,6 +8,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
 }
 
 body {
@@ -49,13 +50,12 @@ fieldset {
 }
 
 /* Nav bar styings */
-
 #nav-bar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    border-bottom: solid 3px var(--platinum);
+    border-bottom: solid 2.5px var(--platinum);
 }
 
 .nav-links {
@@ -120,11 +120,6 @@ fieldset {
 #contact-form {
     margin: 0 auto;
 }
-
-/* #other-field>label:first-of-type {
-    margin-bottom: 0.5rem;
-    padding-left: 0.5rem;
-} */
 
 /* Label and Input stylings */
 label {

@@ -22,20 +22,26 @@
 
     //Create and assign variables for the form elements
     //Get the value of first name, trim and store it.
-    let fname = document.getElementById("f-name").value.trim(); 
+    let fname = document.getElementById("fname").value.trim(); 
     //Get the value of last name, trim and store it.
-    let lname = document.getElementById("l-name").value.trim();
+    let lname = document.getElementById("lname").value.trim();
+    //Get the value of job title, trim and store it.
+    let jobTitle = document.getElementById("jobTitle").value.trim();
+    //Get the value of company, trim and store it.
+    let company = document.getElementById("company").value.trim();
     //Get the value of email, trim and store it.
     let email = document.getElementById("email").value.trim();
     //Get the value of the LinkedIn link and store it
-    let linkedIn = document.getElementById("li-url").value.trim();
+    let linkedIn = document.getElementById("liUrl").value.trim();
     //Get the value of meet-list, trim and and store it.
-    let meetList = document.getElementById("meet-list").value.trim();
+    let meetList = document.getElementById("meetList").value.trim();
     //Get the value of meet-other, trim and store it.
-    let meetOther = document.getElementById("meet-other").value.trim();
+    let meetOther = document.getElementById("meetOther").value.trim();
     //Get the value of mail-list and store it.
     let mailList = document.getElementById("mail-list");
-
+    //Get the value of meet-other, trim and store it.
+    let message = document.getElementById("message").value.trim();
+    
     // If the first name input has no entry...
     if (fname === "") {
         valid = false; //Invalidate the validation.
