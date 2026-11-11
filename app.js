@@ -25,10 +25,15 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-//Add a route to the confirmation pare
+//Add a route to the confirmation page
 app.get('/confirm', (req, res) => {
     res.render('confirm')
 });
+
+//Add a route to the contact page
+app.get('/contact', (req, res) => {
+    res.render('contact')
+})
 
 //Add a route to the admin page
 app.get('/admin', (req, res) => {

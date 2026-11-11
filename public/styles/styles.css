@@ -70,7 +70,7 @@ fieldset {
 }
 
 /* Home Stylings */
-#home-main {
+#home-main, #contact-main {
     margin: auto;
     border-radius: var(--curb);
     box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
@@ -119,11 +119,10 @@ fieldset {
     margin: 0 auto;
 }
 
-
-#other-field>label:first-of-type {
-    /* margin-bottom: 0.5rem; */
-    /* padding-left: 0.5rem; */
-}
+/* #other-field>label:first-of-type {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+} */
 
 /* Label and Input stylings */
 label {
