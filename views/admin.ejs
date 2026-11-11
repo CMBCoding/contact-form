@@ -9,35 +9,35 @@
     </header>
     <main id="admin-main" class="gothic-thin">
         <table id="admin-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Job Title</th>
+                    <th>Company</th>
+                    <th>LinkedIn URL</th>
+                    <th>Email</th>
+                    <th colspan="2">Meeting Vector</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
             <tbody>
-                <thead>
+                <% contacts.forEach(contact => { %>
                     <tr>
-                        <th>Name</th>
-                        <th>Job Title</th>
-                        <th>Company</th>
-                        <th>LinkedIn URL</th>
-                        <th>Email</th>
-                        <th>Meeting Vector</th>
-                        <th>Message</th>
+                        <td><%= contact.fname %> <%= contact.lname %></td>
+                        <td><%= contact.jobTitle %></td>
+                        <td><%= contact.company %></td>
+                        <td><%= contact.linkedIn %></td>
+                        <td><%= contact.email %></td>
+                        <td><%= contact.meetList %></td>
+                        <td><%= contact.meetOther %></td>
+                        <td><%= contact.message %></td>
                     </tr>
-                    <% contacts.forEach(contact => { %>
-                        <tr>
-                            <td><%= contact.fname %> <%= contact.lname %></td>
-                            <td><%= contact.jobTitle %></td>
-                            <td><%= contact.company %></td>
-                            <td><%= contact.linkedIn %></td>
-                            <td><%= contact.email %></td>
-                            <td><%= contact.meetList %></td>
-                            <td><%= contact.meetOther %></td>
-                            <td><%= contact.message %></td>
-                        </tr>
-                    <% }); %>
-                </thead>
+                <% }); %>
             </tbody>
         </table>
     </main>
     <script>
-        new DataTable('admin-table', 
+        new DataTable('#admin-table', 
             {responsive: true}
         )
     </script>

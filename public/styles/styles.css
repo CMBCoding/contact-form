@@ -78,6 +78,11 @@ fieldset {
     box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
 }
 
+#admin-main {
+    padding: 2rem 2rem;
+    
+}
+
 #contact-form {
     margin: 1rem auto;
     display: flex;
@@ -229,6 +234,33 @@ button[type="submit"] {
     padding: 8px;
     width: 5.625rem;
 }
+
+/* Table stylings */
+#admin-table {
+    margin: 1rem auto;
+    width: 100%;
+    border: solid 2px var(--carolina-blue);
+}
+
+#admin-table > tbody > tr.child > td > ul {
+    margin-left: -2rem;
+}
+
+#admin-table li {
+    list-style-type: none;
+}
+
+#admin-table th {
+    background-color: var(--carolina-blue);
+    border: none;
+    color: var(--platinum);
+}
+
+.dtr-title {
+    font-weight: 600;
+    margin-right: 0.25rem;
+}
+
 
 /* Responsive Stylings - Half-width and Tablet screens */
 @media screen and (min-width: 37.5rem) {
