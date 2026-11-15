@@ -61,7 +61,7 @@ body {
     text-decoration: none;
     border-left: var(--carolina-blue) solid 2px;
     padding-left: 0.5rem;
-    margin: 1rem;
+    margin: 0.75rem;
 }
 
 .nav-links:hover {
@@ -378,7 +378,7 @@ button[type="submit"] {
     font-weight: 600;
 }
 
- .contact-links > a {
+.contact-links > a {
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -390,7 +390,7 @@ button[type="submit"] {
     text-decoration: none;
 }
 
-a:hover,a:focus {
+.contact-links a:hover, .contact-links a:focus {
     color: var(--carolina-blue);
 }
 
@@ -509,7 +509,7 @@ a:hover,a:focus {
     }
 
     #certs > li {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     #skills > li > .icon,
@@ -653,8 +653,9 @@ a:hover,a:focus {
         padding: 4px;
     }
 
-
-
+    #certs > li {
+        font-size: 16px;
+    }
 }
 
 /* Responsive Stylings - Full-screen Desktop */
@@ -716,13 +717,12 @@ a:hover,a:focus {
         margin: auto 0.5rem;
     }
 
-    #meet-info>.row>.row-box>#meet-list-label {
-        padding-left: 0.5rem;
+    #other-field > label:nth-child(1) {
+        padding-left: 1rem;
     }
-    
     #message {
-        width: 100%;
-        margin: 0.5rem auto;
+        width: 97%;
+        margin: 1rem auto;
     }
 
 
@@ -742,6 +742,7 @@ a:hover,a:focus {
         padding: 6px;
     }
 
+    /*Resume Stylings */
     #summary {
         display: grid;
         grid-template-areas: 
