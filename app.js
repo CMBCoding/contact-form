@@ -41,6 +41,11 @@ app.get('/admin', (req, res) => {
     res.render('admin', {contacts});
 })
 
+//Add a route to the resume page
+app.get('/resume', (req, res) => {
+    res.render('resume')
+})
+
 //Post the data from the contacts page into the admin pages
 app.post('/confirm', (req, res) => {
     console.log(req.body);
