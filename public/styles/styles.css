@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+/* General/Global Stylings */
+
 #header {
     text-align: center;
     display: flex;
@@ -17,10 +19,6 @@ body {
     font-size: 16px;
     background-color: var(--midnight-whisper);
     color: var(--platinum);
-}
-
-fieldset {
-    border: none;
 }
 
 :root {
@@ -80,9 +78,9 @@ fieldset {
 
 #admin-main {
     padding: 2rem 2rem;
-    
 }
 
+/* Contact Form Stylings */
 #contact-form {
     margin: 1rem auto;
     display: flex;
@@ -100,14 +98,6 @@ fieldset {
     padding: 0.25rem;
 }
 
-.error-msg {
-    text-align: left;
-    background-color: #ff0000;
-    color: #ffffff;
-    font-weight: bold;
-    border-radius: var(--curb);
-}
-
 #contact-info,
 #meet-info,
 #other-field {
@@ -121,47 +111,12 @@ fieldset {
     border-radius: var(--curb);
 }
 
+fieldset {
+    border: none;
+}
 
 #contact-form {
     margin: 0 auto;
-}
-
-/* Label and Input stylings */
-label {
-    width: 100%;
-    display: block;
-    font-weight: bold;
-    text-align: left;
-}
-
-input[type="text"],
-input[type="email"],
-#meet-other {
-    width: 18.125rem;
-    height: 2rem;
-    border-radius: var(--curb);
-    border: var(--field-border);
-}
-
-select,
-.row {
-    width: 100%;
-}
-
-.error-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 100%;
-}
-
-.error-row-widescreen {
-    display: none;
-}
-
-select {
-    height: 2rem;
-    border: var(--field-border);
-    border-radius: var(--curb);
 }
 
 .row-box {
@@ -206,13 +161,56 @@ select {
     width: 33%;
 }
 
+
+/* Label and Input stylings */
+label {
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+#meet-other {
+    width: 18.125rem;
+    height: 2rem;
+    border-radius: var(--curb);
+    border: var(--field-border);
+}
+
+input[type="radio"] {
+    margin: 0;
+}
+
+select {
+    height: 2rem;
+    border: var(--field-border);
+    border-radius: var(--curb);
+}
+
 textarea {
     border: var(--field-border);
     border-radius: var(--curb);
 }
 
-input[type="radio"] {
-    margin: 0;
+/* Error Message Stylings */
+.error-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.error-row-widescreen {
+    display: none;
+}
+
+.error-msg {
+    text-align: left;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: var(--curb);
 }
 
 /* Button container stylings */
@@ -261,9 +259,275 @@ button[type="submit"] {
     margin-right: 0.25rem;
 }
 
+/* Resume Stylings */
+#resume-main body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--midnight-whisper);
+    color: var(--platinum);
+    margin: 0 auto 5rem auto;
+    max-width: 1200px;
+}
+
+#resume-main {
+    margin: 0 auto;
+}
+
+#resume-main ul {
+    padding-left: 0;  /* Removes the annoying auto left space*/
+}
+
+#resume-main p {
+    margin: 0.55rem;
+}
+
+.subsec {
+    background-color: var(--midnight-whisper);
+    box-shadow: -10px 10px 0px -7px var(--carolina-blue);
+    padding: var(--spacer-thin) var(--spacer-extra);
+}
+
+#resume-main h2 {
+    text-decoration: underline var(--carolina-blue) 3px;
+}
+
+
+#resume-main h3 {
+    text-decoration: underline var(--carolina-blue) 3px;
+    margin: var(--spacer-standard) 0 var(--spacer-thin) var(--spacer-thin);
+}
+
+.card, .subsec > h2 {margin-left: var(--spacer-thin);}
+
+.card {
+    border-bottom: var(--platinum) 1px solid;
+    border-left: var(--platinum) 1px solid;
+    margin-bottom: var(--spacer-extra)
+}
+
+#resume-main section > .card:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Header Section Stylings */
+#header-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: var(--spacer-standard) auto 0 auto;
+}
+
+#header-section > h1 {
+    background-color: var(--carolina-blue);
+    color: var(--midnight-whisper);
+    padding: var(--spacer-thin);
+    text-align: left;
+    margin-top: 0;
+    width: 100%;
+}
+
+/* Summary Section Stylings */
+#summary {
+    display: grid;
+        grid-template-areas: 
+        "sum-hd"
+        "profile"
+        "sum-txt";
+    padding-bottom: var(--spacer-extra);
+}
+
+#summary > h2 {
+    grid-area: sum-hd;
+    margin-top: var(--spacer-thin);
+    margin-left: var(--spacer-thin);
+}
+
+#summary > p {
+    grid-area: sum-txt;
+    text-align: left;
+    margin-left: var(--spacer-extra);
+    margin-top: var(--spacer-extra);
+}
+
+#profile {
+    grid-area: profile;
+    width: 190px;
+    height: 190px;
+    box-shadow: -13px 13px 0px -7px var(--carolina-blue), 13px -13px 0px -7px var(--carolina-blue);
+}
+
+.contact-info {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: var(--spacer-thin) 0;
+    padding: 0;
+    gap: 0.5rem;
+}
+
+.contact-info > li{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 260px;
+    font-weight: 600;
+}
+
+ .contact-links > a {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 260px;
+    font-weight: 600;
+    color: var(--platinum);
+    text-decoration: none;
+}
+
+a:hover,a:focus {
+    color: var(--carolina-blue);
+}
+
+/* Skills and Certifications Section */
+#skills, #certs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+#skills > li,
+#certs > li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
+
+#skills > li > .icon,
+#certs > li > .icon {
+    margin: 0.25rem 0.5rem;
+}
+
+#skills > li > strong {
+    margin-right: 0.35rem;
+    margin-left: 0.5rem;
+}
+
+#certs > li > strong {
+    margin-right: 0.35rem;
+}
+
+.icon {
+    height: 1.8rem;
+    width: 1.8rem;
+    margin-right: 0.25rem;
+    border: none;
+}
+
+/*Resume Stylings - Header Section Stylings */
+ #header-section > h1 {text-align: center;}
+
+    /* Global/General Styles */
+    #resume-main h3 {
+        margin-bottom: var(--spacer-thin);
+        margin-left: var(--spacer-thin);
+    }
+
+    .contact-info {
+        gap: 0.5rem;
+        justify-content: flex-start;
+        margin: 0 var(--spacer-thin);
+    }
+
+    .contact-info > li, 
+    .contact-links > a {
+        width: 100%;
+    }
+    
+    /* Summary Section Stylings */
+    #summary > p {
+        text-align: left;
+        margin-left: var(--spacer-thin);
+        margin-top: var(--spacer-standard);
+    }
+
+    #profile {
+        margin-left: var(--spacer-standard);
+    }
+
+    .subsec {
+        padding: var(--spacer-thin);
+        min-width: 340px;
+    }
+
+    /* Skills and Certifications Section */
+    #skills {
+        display: none;
+    }
+
+    #skills-mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #skills-mobile > strong {
+        margin: var(--spacer-thin) 0 var(--spacer-thin) var(--spacer-thin);
+    }
+
+    .skills-ribbon {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+
+    .skills-ribbon > img {
+        margin-left: var(--spacer-thin);
+    }
+
+    .skills-box {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 90px;
+        padding: 0.25rem;
+    }
+
+    .skills-box > p {
+        margin: 0.25rem 0.5rem;
+    }
+
+    #certs > li {
+        font-size: 15px;
+    }
+
+    #skills > li > .icon,
+    #certs > li > .icon {
+        height: 1.2rem;
+        width: 1.2rem;
+        margin: 0.25rem 0.2rem;
+    }
+
+
+/* Education Section Stylings */
+.title-mark {
+    border-left: var(--carolina-blue) solid 2px;
+    margin-right: 0.25rem;
+}
 
 /* Responsive Stylings - Half-width and Tablet screens */
-@media screen and (min-width: 37.5rem) {
+@media screen and (min-width: 36.5rem) {
 
     #header {
         padding-top: 1rem;
@@ -389,6 +653,8 @@ button[type="submit"] {
         padding: 4px;
     }
 
+
+
 }
 
 /* Responsive Stylings - Full-screen Desktop */
@@ -475,4 +741,22 @@ button[type="submit"] {
         font-size: 1.5rem;
         padding: 6px;
     }
+
+    #summary {
+        display: grid;
+        grid-template-areas: 
+            "sum-hd sum-hd"
+            "profile sum-txt";
+    }
+
+    #skills-mobile {
+        display: none;
+    }
+
+    #skills, #certs {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
 }
+
