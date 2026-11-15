@@ -31,7 +31,7 @@
     let company = document.getElementById("company").value.trim();
     //Get the value of email, trim and store it.
     let email = document.getElementById("email").value;
-    let linkedIn = document.getElementById("liUrl").value.trim();
+    let linkedIn = document.getElementById("linkedIn").value.trim();
     //Get the value of meet-list, trim and and store it.
     let meetList = document.getElementById("meetList").value.trim();
     //Get the value of meet-other, trim and store it.
