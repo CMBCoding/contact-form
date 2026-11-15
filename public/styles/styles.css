@@ -208,8 +208,8 @@ textarea {
 
 .error-msg {
     text-align: left;
-    background-color: #ff0000;
-    color: #ffffff;
+    background-color:var(--carolina-blue);
+    color: var(--midnight-whisper);
     font-weight: bold;
     border-radius: var(--curb);
 }
@@ -569,7 +569,7 @@ button[type="submit"] {
     }
 
     #meet-info>.error-msg {
-        max-width: 31.45rem;
+        max-width: 100%;
         margin: auto 0;
     }
 
