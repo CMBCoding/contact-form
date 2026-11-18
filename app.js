@@ -1,8 +1,35 @@
 /* Import the node express module */
 import express from 'express';
 
+/* Import the mysql2 module */
+import mysql2 from 'mysql2'
+/* Import the donenve module */
+import dotenev from 'dotenv'
+dotenev.config();
+
 //Create an instance of an Express application
 const app = express();
+
+const pool = mysql2.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
+}).promise();
+
+//DB test route
+app.get('/db-test', async(req, res) => {
+    try {
+        //Get the contacts from the database query and store it to contacts
+        const contacts = await pool.query('SELECT * FROM Contacts')
+        //Send the data from contacts to the browser as JSON data.
+        res.send(contacts[0]);
+    } catch (error) {
+        console.log("Database error", error);
+        res.status(500).send(`Database error ${error.message}`)
+    }
+})
 
 //Set up and define a port number where the server will listen
 const PORT = 3003;
