@@ -83,15 +83,35 @@ app.get('/resume', (req, res) => {
 })
 
 //Post the data from the contacts page into the admin pages
-app.post('/confirm', (req, res) => {
-    console.log(req.body);
+app.post('/confirm', async(req, res) => {
+    try {    
+        console.log(req.body);
 
     //Create a JSON object to store the data from each submission from the contacts posting
-    const contact = req.body;
-    contact['timestamp'] = new Date(); //Affix a timestamp to each contact submission.
-    contacts.push(contact); //Push the contact into the contacts array.
+        const contact = req.body;
+        //SQL insert query to add data back into the database.
+        const sqlInject = `INSERT INTO Contacts (FirstName, LastName, JobTitle, Company, LinkedIn, Email)
+        VAlUES (?, ?, ?, ?, ?, ?);`
 
-    res.render('confirm', {contact});
+        //Set the parameters to fill the placeholder values in the sql injection.
+        const params = [
+            contact.fname, 
+            contact.lname,
+            contact.jobTitle,
+            contact.company,
+            contact.linkedIn,
+            contact.email
+        ]
+
+        //Execute the above query using the parameters defined above
+        const [result] = await pool.execute(sqlInject, params);
+
+        //Render the submission result on the confirm page
+        res.render('confirm', {contact : contact})
+    }  catch (error) {
+        console.log("Error in form data submission", error);
+        res.status(500).send(`Unfortunately, there was an error in processing the form data. Please try again.`) 
+    }
 });
 
 //Start a server in the designated port
