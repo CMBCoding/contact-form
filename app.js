@@ -63,9 +63,18 @@ app.get('/contact', (req, res) => {
 })
 
 //Add a route to the admin page
-app.get('/admin', (req, res) => {
-    //Post the data from the contacts page into the admin pages
-    res.render('admin', {contacts});
+app.get('/admin', async(req, res) => {
+    try {
+        //Attempt to fetch the contacts table from the database
+        const contacts = await pool.query(`SELECT * FROM Contacts ORDER BY FirstName DESC`);
+        console.log(contacts[0]);
+
+        //Render the table onto the admin page
+        res.render('admin', {contacts : contacts[0]})
+    } catch (error) {
+        console.log("Database error", error);
+        res.status(500).send(`Database error ${error.message}`) 
+    }
 })
 
 //Add a route to the resume page

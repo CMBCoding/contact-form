@@ -16,21 +16,16 @@
                     <th>Company</th>
                     <th>LinkedIn URL</th>
                     <th>Email</th>
-                    <th colspan="2">Meeting Vector</th>
-                    <th>Message</th>
                 </tr>
             </thead>
             <tbody>
                 <% contacts.forEach(contact => { %>
                     <tr>
-                        <td><%= contact.fname %> <%= contact.lname %></td>
-                        <td><%= contact.jobTitle %></td>
-                        <td><%= contact.company %></td>
-                        <td><%= contact.linkedIn %></td>
-                        <td><%= contact.email %></td>
-                        <td><%= contact.meetList %></td>
-                        <td><%= contact.meetOther %></td>
-                        <td><%= contact.message %></td>
+                        <td><%= contact.FirstName %> <%= contact.LastName %></td>
+                        <td><%= contact.JobTitle %></td>
+                        <td><%= contact.Company %></td>
+                        <td><%= contact.LinkedIn %></td>
+                        <td><%= contact.Email %></td>
                     </tr>
                 <% }); %>
             </tbody>
