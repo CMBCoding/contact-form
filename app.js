@@ -49,17 +49,17 @@ const contacts = [];
 //Define the default route ("/")
 app.get('/', (req, res) => {
     //In response to the request, send the html file at the directory.
-    res.render('home');
+    res.render('home', {title : 'Portfolio - Home'});
 });
 
 //Add a route to the confirmation page
 app.get('/confirm', (req, res) => {
-    res.render('confirm')
+    res.render('confirm', {title : 'Portfolio - Confirm'})
 });
 
 //Add a route to the contact page
 app.get('/contact', (req, res) => {
-    res.render('contact')
+    res.render('contact', {title : 'Portfolio - Contact Form'})
 })
 
 //Add a route to the admin page
@@ -70,7 +70,7 @@ app.get('/admin', async(req, res) => {
         console.log(contacts[0]);
 
         //Render the table onto the admin page
-        res.render('admin', {contacts : contacts[0]})
+        res.render('admin', {contacts : contacts[0], title : 'Portfolio - Admin'})
     } catch (error) {
         console.log("Database error", error);
         res.status(500).send(`Database error ${error.message}`) 
@@ -79,7 +79,7 @@ app.get('/admin', async(req, res) => {
 
 //Add a route to the resume page
 app.get('/resume', (req, res) => {
-    res.render('resume')
+    res.render('resume', {title: ' Porfolio - Resume'})
 })
 
 //Post the data from the contacts page into the admin pages
@@ -107,7 +107,7 @@ app.post('/confirm', async(req, res) => {
         const [result] = await pool.execute(sqlInject, params);
 
         //Render the submission result on the confirm page
-        res.render('confirm', {contact : contact})
+        res.render('confirm', {contact : contact, title : 'Portfolio - Confirm'})
     }  catch (error) {
         console.log("Error in form data submission", error);
         res.status(500).send(`Unfortunately, there was an error in processing the form data. Please try again.`) 
