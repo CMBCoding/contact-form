@@ -53,7 +53,7 @@ app.get('/contact', (req, res) => {
 app.get('/admin', async(req, res) => {
     try {
         //Attempt to fetch the contacts table from the database
-        const contacts = await pool.query(`SELECT * FROM Contacts ORDER BY FirstName DESC`);
+        const contacts = await pool.query(`SELECT * FROM Contacts ORDER BY id DESC`);
         console.log(contacts[0]);
 
         //Render the table onto the admin page

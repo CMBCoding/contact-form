@@ -88,6 +88,12 @@
         document.getElementById("error-email").style.visibility = "visible";
     }
 
+    //If the user checks mailList and not one of the formats
+    if ((mailList.checked === true && (email === ""))) {
+        valid = false; //Invalidate the validation.
+        document.getElementById("error-format").style.visibility = "visible";
+    }
+
     return valid;
  };
 

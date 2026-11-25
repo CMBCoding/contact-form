@@ -214,6 +214,10 @@ textarea {
     border-radius: var(--curb);
 }
 
+#other-field > #error-format {
+    width: 100%;
+}
+
 /* Button container stylings */
 #btn-containter {
     width: 20.375rem;
@@ -568,9 +572,14 @@ button[type="submit"] {
         margin: 0.5rem;
     }
 
-    #meet-info>.error-msg {
+    #meet-info > .error-msg {
         max-width: 100%;
         margin: auto 0;
+    }
+
+    #other-field > #error-format {
+        max-width: 100%;
+        margin: 0.5rem 0;
     }
 
     #contact-form {
@@ -665,22 +674,11 @@ button[type="submit"] {
         width: 100%;
     }
 
-    /* #meet-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 34.25rem;
-    } */
-
     #message {
         width: 100%;
         margin: 0.25rem 0 0.5rem 0;
     }
 }
-
-
-
 
 /* Responsive Stylings - Full-screen Desktop */
 @media screen and (min-width: 75rem) {
@@ -717,7 +715,8 @@ button[type="submit"] {
         align-items: flex-start;
     }
 
-    #meet-info>.error-msg {
+    #meet-info > .error-msg, 
+    #other-field > #error-format {
         max-width: 52.75rem;
         margin: 0.5rem;
     }
