@@ -76,9 +76,17 @@ app.post('/confirm', async(req, res) => {
 
     //Create a JSON object to store the data from each submission from the contacts posting
         const contact = req.body;
+
+        //Pull out and use one meeting vector to store to the DB.
+        if (contact.meetList && contact.meetList !== 'none') {
+            contact.meeting = contact.meetList;
+        } else {
+            contact.meeting = contact.meetOther;
+        }
+
         //SQL insert query to add data back into the database.
-        const sqlInject = `INSERT INTO Contacts (FirstName, LastName, JobTitle, Company, LinkedIn, Email)
-        VAlUES (?, ?, ?, ?, ?, ?);`
+        const sqlInject = `INSERT INTO Contacts (FirstName, LastName, JobTitle, Company, LinkedIn, Email, Meeting, Message)
+        VAlUES (?, ?, ?, ?, ?, ?, ?, ?);`
 
         //Set the parameters to fill the placeholder values in the sql injection.
         const params = [
@@ -87,7 +95,9 @@ app.post('/confirm', async(req, res) => {
             contact.jobTitle,
             contact.company,
             contact.linkedIn,
-            contact.email
+            contact.email,
+            contact.meeting,
+            contact.message
         ]
 
         //Execute the above query using the parameters defined above
