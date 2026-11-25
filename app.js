@@ -18,19 +18,6 @@ const pool = mysql2.createPool({
     port: process.env.DB_PORT
 }).promise();
 
-//DB test route
-app.get('/db-test', async(req, res) => {
-    try {
-        //Get the contacts from the database query and store it to contacts
-        const contacts = await pool.query('SELECT * FROM Contacts')
-        //Send the data from contacts to the browser as JSON data.
-        res.send(contacts[0]);
-    } catch (error) {
-        console.log("Database error", error);
-        res.status(500).send(`Database error ${error.message}`)
-    }
-})
-
 //Set up and define a port number where the server will listen
 const PORT = 3003;
 
