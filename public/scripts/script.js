@@ -37,7 +37,7 @@
     //Get the value of meet-other, trim and store it.
     let meetOther = document.getElementById("meetOther").value.trim();
     //Get the value of mail-list and store it.
-    let mailList = document.getElementById("mail-list");
+    let mailList = document.getElementById("mailList");
     //Get the value of meet-other, trim and store it.
     let message = document.getElementById("message").value.trim();
     
