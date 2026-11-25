@@ -87,7 +87,7 @@ app.post('/confirm', async(req, res) => {
         //SQL insert query to add data back into the database.
         const sqlInject = `INSERT INTO Contacts (FirstName, LastName, JobTitle, Company, LinkedIn, 
         Email, Meeting, Message, MailList, Format)
-        VAlUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`
 
         //Set the parameters to fill the placeholder values in the sql injection.
         const params = [
