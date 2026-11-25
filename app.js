@@ -66,7 +66,12 @@ app.get('/admin', async(req, res) => {
 
 //Add a route to the resume page
 app.get('/resume', (req, res) => {
-    res.render('resume', {title: ' Porfolio - Resume'})
+    res.render('resume', {title: 'Porfolio - Resume'})
+})
+
+//Add a route to the porfolio page
+app.get('/portfolio', (req, res) => {
+    res.render('portfolio', {title: 'Porfolio - Projects'})
 })
 
 //Post the data from the contacts page into the admin pages
